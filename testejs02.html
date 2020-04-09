@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+    <meta charset="UTF-8">
+    <title>Teste JavaScript </title>
+    <script>
+        /* tudo que estiver dentro de
+        * () = Parâmetros
+        * {} = Códigos
+        * nesse caso eu vou manipular elementos ou objetos atravez do seu ID para isso vou utilizar
+         * getElementById("id que sera manipulado"). ação ex: .src = "_imagens/lampada-algo.jpg";
+         * com esse comando vamos manipular o objeto de acordo com oq desejamos
+          * */
+        function acendeLampada(){
+            document.getElementById("luz").src = "_imagens/lampada-acesa.jpg";
+        }
+        function apagaLampada(){
+            document.getElementById("luz").src = "_imagens/lampada-apagada.jpg";
+        }
+        function quebraLampada(){
+            document.getElementById("luz").src = "_imagens/lampada-quebrada.jpg";
+        }
+    </script>
+</head>
+<body>
+<script>/*temos chamadas no HTML uma delas é o ON... alguma coisa
+  ex:
+  onclick: assim que clicarmos no parametro celecionado ele fara a ação
+  onmousemove: assim que o mouse passar por cima do parametro celecionado a ação ocorrera */</script>
+    <h1>Acenda a Lâmpada</h1>
+    <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="acendeLampada()" onmouseout="apagaLampada()" onclick="quebraLampada()" />
+
+</body>
+</html>

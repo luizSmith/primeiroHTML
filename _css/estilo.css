@@ -1,0 +1,284 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+@font-face {
+    font-family: 'FonteLogo' ;
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+body {
+    font-family: arial,sans-serifs;
+    background-color: #dddddd;/*altera a cor do fundo*/
+    color: rgba(0,0,0,1);
+	padding: 0px 20px 0px 20px;
+}
+
+div#interface {
+ /*Com isso eu delimito a linha de inscrição da pagina que estiver relativa, oque estiver em posição absoluta não será alterado*/
+    width: 960px; /*Largura da interface*/
+    background-color: #ffffff; /*altera a cor da interface da pagina*/
+    margin: -20px auto 0px auto; /*você controla a margem a Primeira é a de CIMA, Segunda DIREITA, terceira BAIXO quarta ESQUERDA
+    vamos deixar as margens laterais (2ª e 4ª)com a denominação "AUTO" dessa forma o navegador ira decidir a melhor margem para o site*/
+    box-shadow:0px 0px 10px rgba(0,0,0,.5); /*com esse comando vc cria uma sombra na lateral da margem da interface dando uma noção de fundo
+    o Primeiro valor vai definir o deslocamento LATERAL, Segundo VERTICAL, Terceiro ESPALHAMENTO DA SOMBRA e logo em seguida a COR DA SOMBRA, que pode ser escrita e definida ou utilizar outras converções como RGBA,HEXADECIMAL, entre as outras*/
+    padding: 10px 20px 10px 20px ; /*com esse comando vc pode ajustar o espaço interno do objeto, no caso o conteudo dentro da margem a numeração é a mesma a cima "background-color" CIMA,DIREITA,BAIXO,ESQUERDA (10px 10px 10px 10px)
+    OBS: se a margem for igual para todas as bordas, não é necessario escrever repetidamente o valor, basta que vc escrevar uma ver e o navegador vai entender que o comando vale para toda a pagina*/
+    position: relative;
+    display: block;
+}
+
+p {
+    text-align: justify;
+    text-indent: 25px;
+}
+
+a {
+    color: #606060;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header#cabecalho img#icone { /*configuramos a posição da imagem identificada como icone que esta dentro co cabeçalho*/
+    position: absolute;/*damos a posição absoluta para qu ele se mantenha fixo de acordo com oq definimos para ele */
+    left: 830px;/*ajustamos a posição X dele*/
+    top: 70px; /*ajustamos a posição Y dele*/
+    z-index: 0;
+}
+
+header#cabecalho{
+    border-bottom: 1px #606060 solid; /*o paddão bottom define a borda de baixo, o primeiro dado define o tamanho da borda o segundo a cor dela e o terceiro o tipo*/
+    height: 150px;
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px; /*daremos um fundo ao cabeçalho com o background
+    a url busca o arquivo desejado, se ele for mt pequeno ele ira se repetir até cobrir o espaço completo, o comando "no-repeat" fará com que a imagem seja exibida apenas uma vez , logo em seguida podemos definir o deslocamento LATERA(X) e depois o VERTICAL(Y)*/
+}
+
+header#cabecalho h1{ /*tudo que estiver dentro do cabeçalho e for dentro da tag H1*/
+    font-family: 'FonteLogo', sans-serif;/*defini a fonte familia*/
+    font-size: 30px; /*tamanho da fonte*/
+    color:  #606060;/*cor da fonte*/
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+    padding: 0px;
+    margin-bottom: 0px ; /*modifica apenas a margem de baixo*/
+}
+
+header#cabecalho h2{
+    font-family: 'Titillium Web', sans-serif;
+    color: #888888;
+    font-size:  15pt;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+/* Formatação de Imagem com Legenda */
+figure.foto-legenda {
+    position: relative; /*(a)dessa forma a localização da legenda vai ficar relativa a posição dela no HTML  */
+    border: 8px solid white; /*Borda, tamanho da borda, tipo de borda e a cor da borda*/
+    box-shadow: 1px 1px 4px black ; /*Sombra,tamanho do deslocamento orizontal,vertical,espalhamento e a cor*/
+
+}
+
+figure.foto-legenda img{
+    width: 100%;
+    height: 100%; /*Ajuste da borda*/
+}
+
+figure.foto-legenda figcaption {
+    opacity: 0; /*define a opacidade da legenda */
+    position: absolute; /*(a)define a posição da legenda dentro do conteiner ou borda */
+    top: 0px; /*(a)*/
+    background-color: rgba(0,0,0,.4); /*camada da legenda*/
+    color: white; /*cor da letra*/
+    width: 100%;   /*(c)espaço que a camada ocupa*/
+    height: 100%;
+    padding: 10px; /*(c)cria um espaço dentro da legenda*/
+    box-sizing: border-box; /*(c)cria um box dentro da borda da imagem e delimita ela*/
+    transition: opacity 1s; /*(b)define a transição, o tipo que esta sendo mencionada e o tempo que ela vai levar para ser executada */
+}
+
+figure.foto-legenda:hover figcaption {/*(b)isso vai definir oq acontecera ao passar o mouse por cima da imagem*/
+    opacity: 1; /*o tanto de opacidade*/
+}
+
+/*Formatação do Menu*/
+nav#menu {
+    display: block;
+}
+nav#menu ul { /*Os dados depois do jogo da velha são entendidos como o padrão ID de identificação, logo em seguida vem a formatação  */
+	list-style: none; /*Retira a marcação da lista UL OU OL*/
+	text-transform: uppercase;/*ajusta a fonte do texto*/
+	position: absolute; /*utilizando uma posição absoluta eu posso controlar o conteudo em qualquer parte da tela, se ela for relativa, eu fico delimitado apenas ao espaço sedido pela caixa*/
+	top: -10px; /*controla a altura (posição Y)*/
+	left: 325px; /*controla a centralização (posição X)*/
+}
+
+
+nav#menu li { /*vai modificar cada conteudo envolvido na lista q estiver em LI*/
+    display: inline-block; /*dessa forma o editor diz q um bloco deve ser exibido na msm linha, dessa forma a lista fica na horizontal*/
+    background-color: #dddddd; /*Cor q vai cobrir as letras*/
+    padding: 10px; /*tamanho do espaço dentro cada LI */
+    margin: 2px; /*vai controlar o espaço fora de cada LI*/
+    transition: background-color 1s; /*Transição da cor do menu*/
+}
+nav#menu li:hover {
+    background-color: #606060; /*Cor do menu ao passar o mouse por cima*/
+}
+nav#menu h1 {
+    display: none; /*retira o texto */
+}
+
+nav#menu a {
+    color: black; /*Cor da letra do menu*/
+    text-decoration: none; /*retira a sublinhação do texto do menu*/
+}
+
+nav#menu a:hover {
+    color: white; /*Cor da letra ao passar o mouse por cima*/
+    text-decoration: underline; /*ao passar o mouse por cima o texto fica sublinhado */
+}
+
+section#corpo {
+    text-align: justify;
+    display:block; /*assim ele sera visto como um bloco*/
+    width: 520px; /*largura*/
+    float: left; /*ele vai flutuar ao lado esquerdo*/
+    border-right: 1px solid #666666;
+    padding-right: 15px solid #606060;
+    display: block;
+}
+
+article#noticia-principal h2 {
+    font-size: 13pt;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 5px 0px 5px 10px;
+    margin: 10px 0px 10px 0px;
+
+}
+
+article#noticia-principal{
+    padding: 10px;
+    display: block;
+    text-align: justify;
+    font: 100% "arial";
+}
+
+header#cabecalho-artigo  h1{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+header#cabecalho-artigo  h2{
+    font-size: 13pt;
+    color: #cecece;
+    background-color: #ffffff;
+    margin: 0px;
+}
+
+header#cabecalho-artigo  h3{
+    font-size: 12px;
+    color: #606060;
+}
+
+table#tabelaspec {
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.direita{
+    text-align: right;
+}
+
+table#tabelaspec td{
+    border: 1px solid #606060;
+    padding: 10px;
+    text-align: center;
+    Vertical-align: middle;
+}
+table#tabelaspec td.ce { /*mudar aspectos da coluna com classe ce*/
+    text-align: right;
+    vertical-align: top; /*alinhas aspectos de acordo com a vertical*/
+    font-weight: bold; /*alterar o tipo de fonte , bold (negrito)*/
+    color: #ffffff;
+    background-color: #606060 ;
+}
+table#tabelaspec td.cd { /*mudar aspectos da coluna com classe cd*/
+    text-align: left;
+    background-color: #cecece;
+}
+
+table#tabelaspec caption {
+    color: #888888;
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+table#tabelaspec caption span {
+    display: block;
+    float: right;
+    color: #000000;
+    font-size: 8pt;
+    margin-top: 10px;
+}
+
+video#funfa{
+    display: block;
+    position: relative;
+    top:-10px;
+    left:50px;
+    border: solid 2px #ffffff;
+    box-shadow: 3px 3px 2px rgba(0,0,0,.4) ; /*sombra, tamanho, deslocamento e cor*/
+}
+
+video#novo{
+    display: block;
+    position: relative;
+    width:350px ;
+    top:-5px;
+    left:20px;
+    border: solid 2px #ffffff;
+    box-shadow: 3px 3px 2px rgba(0,0,0,.4) ; /*sombra, tamanho, deslocamento e cor*/
+}
+
+aside#lateral {
+    display: block;
+    width: 400px;
+    float: right; /*ele vai flutuar ao lado direito*/
+    background-color: #dddddd;
+    padding: 10px;
+    margin-top: 20px ;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+aside#lateral h1 {
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-top: 0px;
+}
+
+aside#lateral h2 {
+    background-color: #606060;
+    font-size: 13pt;
+    color: #ffffff;
+    padding: 5px;
+}
+
+footer#rodape {
+    clear: both;
+	border-top: 1px solid #666666;
+}
+footer#rodape p {
+	text-align:center;
+	}
+
+
+
+
+

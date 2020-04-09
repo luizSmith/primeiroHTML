@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+    <meta charset="UTF-8">
+    <title>Teste JavaScript </title>
+    <script>
+        var quebrada = false;
+        function mudaLampada(tipo){
+/* simplificando oque ja haviamos feito, vamos informar onde ele vai buscar o arquivo, o tipo do arquivo e para juntar os dois com o parametro que no caso é TIPO utilizaremos o "+" para concatenar  */
+            if (!quebrada){
+                document.getElementById("luz").src = "_imagens/" + tipo + ".jpg";
+                /*alterar o 3 para lampada-quebrada pois substituimos o 3*/
+                if (tipo == 'lampada-quebrada'){
+                    quebrada = true;
+                }
+            }
+
+        }
+        /*a açao ira ocorrer até o parametro ser igual a lampada-quebrada que ocorre quando clicamos na lampada a informação
+         de que ela esta quebrada se torna verdadeira e o ciclo acaba */
+    </script>
+</head>
+<body>
+    <h1>Acenda a Lâmpada</h1>
+    <script>/* vamos alterar os tipos para que  a ação fique cordenada */ </script>
+    <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')" />
+
+    </body>
+    </html>

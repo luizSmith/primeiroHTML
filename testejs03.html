@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+    <meta charset="UTF-8">
+    <title>Teste JavaScript </title>
+    <script>
+        /*a passagem de parametros é uma forma mais facil de fazer oq foi feito na ultima pagina
+        * - Se vc estudou programação vc sabe que o "SE" é representado pelo "IF"
+        * - Nós definimos um parametro o nomeamos de tipo,
+        * EX: Se(IF) tipo for igual(==) a tal numero, tal ação será executada
+        * e no final como em C++ temos a exibição na tela do resultado da ação de acordo com a ação do usuario */
+        var quebrada = false;
+         function mudaLampada(tipo){
+            if (tipo == 1) {
+                arquivo = "_imagens/lampada-acesa.jpg";
+            }
+            if (tipo == 2) {
+                arquivo = "_imagens/lampada-apagada.jpg";
+            }
+            if (tipo == 3) {
+                arquivo = "_imagens/lampada-quebrada.jpg";
+            }
+            if (!quebrada){ /*se não estiver quebrada*/
+                document.getElementById("luz").src = arquivo; /*continue a ação que estiver em arquivo*/
+                if (tipo == 3){
+                    quebrada = true;
+                }
+            }
+
+        }
+        /*o programa se inicia dizendo que a informação de que ela esta quebrada é falsa por isso as ações seguintes são executadas
+        * dps da terceira ação mostra, se ela não estiver quebrada, continue a ação mas ao acionar o terceiro parametro ele se torna verdadeiro
+        * e como esta quebrada, ela n executa ja que a informação de que esta quebrada é verdadeira*/
+    </script>
+</head>
+<body>
+<script>/* as funções vão passar parametros atravez de numeros para que ele execute a ação desejada */</script>
+<h1>Acenda a Lâmpada</h1>
+<img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3)" />
+
+</body>
+</html>
